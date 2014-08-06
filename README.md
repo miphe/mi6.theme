@@ -1,18 +1,14 @@
 MI6 Nesta theme
 ===============
 
-## Requriements
-
-- Bundler
-- Nesta ~0.10.0
-
 MI6 is a theme for Nesta, a [Ruby CMS](nesta).
 
 The theme was designed and built by André Drougge ([Miphe.com](miphe)).
 
-## Installation
+## Requriements
 
-...
+- Bundler
+- Nesta ~0.10.0
 
 ## Getting started
 
