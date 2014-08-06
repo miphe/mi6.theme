@@ -1,0 +1,21 @@
+- if social_info && social_info["profiles"]
+  %section.profile
+    .image-container
+      .image-container-inner
+        %img{ :src => social_info["gravatar"] }
+    .content-container
+      .content-container-inner
+        %h2
+          %span.subtle-text
+            =author_info["name"]
+          &nbsp;|&nbsp;
+          =social_info["contact_me_text"]
+
+        %ul.bare.is-inline
+          - social_info["profiles"].each_with_index do |item, i|
+            - info = item[1]
+            - label = item[0]
+            - last = i+1 >= social_info["profiles"].size ? 'is-last' : ''
+            %li{ :class => last }
+              %a{ :target => '_blank', :href => info["url"], :title => "#{social_info['name']} on #{label}", :rel => info["rel"] }
+                %i{ :class => "fa #{info["icon"]}"}

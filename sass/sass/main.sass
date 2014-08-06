@@ -1,0 +1,237 @@
+
+// Libraries and extensions
+@import compass
+@import susy
+@import uv/_uv_idle.scss
+@import magnific
+
+// Settings, functions and mixing
+@import vars
+@import mixins
+
+// Styles
+@import sidebar
+@import typography
+@import sections
+@import articles
+@import front
+@import hero
+@import tri-usp
+@import flag-lists
+@import xp-graph
+@import form
+
+// TODO: Throw all this CSS into proper partials. This file should be clean.
+
+.page
+  // +susy-grid-background
+  +container
+
+body, html
+  font-family: 'Arvo', arial, sans-serif
+  background-color: $theme-color
+
+.is-hidden
+  display: none!important
+
+// Content grid
+#content
+  // margin-top: $header-height
+  +span-columns(12 omega, 12)
+
+  @media #{$more-than-menu-width}
+    +span-columns(9, 12)
+
+  @media #{$more-than-tablet}
+    +span-columns(8, 12)
+
+// Sidebar grid
+#sidebar
+  +span-columns(12 omega, 12)
+
+  @media #{$more-than-menu-width}
+    +span-columns(3 omega, 12)
+
+  @media #{$more-than-tablet}
+    +span-columns(4 omega, 12)
+
+// Two column generic
+$gutter-width : 1em
+
+.column-grid
+  &.columns-2
+    +container
+
+    > .column-1, > .column-2
+      +span-columns(12 omega, 12)
+
+    @media #{$more-than-tablet}
+      > .column-1
+        +span-columns(6, 12)
+
+      > .column-2
+        +span-columns(6 omega, 12)
+
+#content-inner
+  padding: 1em
+
+  @media #{$more-than-menu-width}
+    padding: 2em
+
+  @media #{$more-than-tablet}
+    padding: 2em 3em
+
+// Site header
+#site-header
+  z-index: 1
+  position: relative
+  background-color: $sb-bg-color
+  border-bottom: 1px solid darken($theme-color, 33)
+
+  h1
+    display: none
+    color: darken($theme-color, 20)
+    font-weight: normal
+    font-size: 1em
+    line-height: $header-line-height
+    margin: 0
+    padding-left: 4em
+    border-bottom: none
+
+    a
+      color: darken($theme-color, 20)
+      &:hover
+        border-bottom: none
+
+    span
+      border-left: 1px solid darken($theme-color, 20)
+      padding-left: .7em
+      margin-left: .45em
+      color: darken($theme-color, 60)
+
+    @media #{$more-than-tablet}
+      display: block
+
+.primary-nav
+
+  +clearfix
+
+  a
+    display: block
+    text-align: center
+    padding: 0 1em
+    line-height: $header-line-height
+
+    &:hover
+      border: 0
+
+  // Menu rendered as dropdown (default)
+  a.mobile-menu-icon
+    display: block
+    text-align: center
+
+  > ul
+    +transition(max-height .50s ease-in-out)
+    padding: 0
+    max-height: 0
+    margin: 0
+
+  &:hover
+    > ul
+      max-height: $header-line-height * 6
+
+  // Menu replacing site title, showing to the left
+  @media #{$more-than-menu-width}
+    a
+      display: inline-block
+      text-align: left
+
+    a.mobile-menu-icon
+      display: none
+
+    ul
+      display: block
+
+    li
+      float: left
+
+      &.is-active
+        a
+          padding-top: .1em
+          line-height: 2.6em
+          border-bottom: .4em solid darken($accent-color, 20)
+
+  // Menu showing to the right
+  @media #{$more-than-tablet}
+    position: absolute
+    top: 0
+    right: 1em
+
+// Single page
+article.has-meta
+  position: relative
+
+  > h1
+    margin-bottom: 3em
+
+  .meta-info
+    position: absolute
+    top: 4em
+
+  +meta-info
+
+footer
+  &.main-footer
+    padding: 2em 0 4em 0
+    nav ul
+      text-align: center
+
+.full-size
+  width: 100%
+
+.img-container
+  position: relative
+
+  .img-container-inner
+    +opacity(.7)
+    position: absolute
+    top: 1em
+    left: 0
+    height: 6em
+    width: 100%
+    background:
+      color: #fff
+
+    &.darken
+      +opacity(.4)
+      background:
+        color: #000
+
+  .logo
+    position: absolute
+    top: 2em
+    left: 2em
+    height: 4em
+
+  h2
+    position: absolute
+    bottom: 1.4em
+    left: 1.2em
+    color: #fff
+    font-size: 2em
+
+    &.middle
+      width: 100%
+      left: 0
+      text-align: center
+
+  .img-label
+    @extend .subtle-text
+    margin-top: -2em
+    font-size: .8em
+    text-align: right
+
+#disqus_thread
+  margin-top: 2em
+  margin-bottom: 2em
+

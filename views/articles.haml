@@ -1,0 +1,40 @@
+// Render a list of articles (or pages)
+
+#content
+  #content-inner
+
+    - if @page.articles.empty?
+
+      %h1
+        Articles
+
+      %ol{:class => 'articles-list articles-summary-list'}
+
+        - articles = defined?(@articles_from_path) ? @articles_from_path : latest_articles(24)
+        - articles.each do |article|
+          %li
+            %article
+              %header
+                %h2
+                  %a(href="#{article.abspath}")= article.heading
+              .article-content
+                = haml :page_meta, :layout => false, :locals => { :page => article }
+                = article.summary
+
+    - else
+
+      %h1
+        = @page.metadata('Link text') || 'Categories'
+
+      %ol{:class => 'articles-list articles-summary-list'}
+        - @page.articles.each do |article|
+          %li
+            %article
+              %header
+                %h2
+                  %a(href="#{article.abspath}")= article.heading
+              .article-content
+                = haml :page_meta, :layout => false, :locals => { :page => article }
+                = article.summary
+
+= haml :sidebar, :layout => false

@@ -1,0 +1,121 @@
+# Features & Partials
+
+## Tri USP
+
+`views/partials/tri_usp.haml`
+
+_This partial allows you to render a list of three unique selling points (USP), the most important quick-links to your site._
+
+The object strubture that this partial expects looks like this:
+
+```Ruby
+[
+  {
+    :title_icon => '',
+    :title_text => '',
+    :cta_icon   => '',
+    :cta_text   => '',
+    :cta_link   => '',
+    :content    => ''
+  },
+  {
+    :title_icon => '',
+    :title_text => '',
+    :cta_icon   => '',
+    :cta_text   => '',
+    :cta_link   => '',
+    :content    => ''
+  },
+  {
+    :title_icon => '',
+    :title_text => '',
+    :cta_icon   => '',
+    :cta_text   => '',
+    :cta_link   => '',
+    :content    => ''
+  }
+]
+```
+
+- Title icon; String; A font-awesome icon ([Font-Awesome icons](http://fontawesome.com/icons)) excluding the `fa-` part of the class. Eg. If the icon class for the icon you want to use is `fa-edit-2`, then the value of this key should be `edit-2`.
+- Title text; String; A title for your USP.
+- CTA Icon; String; A font-awesome icon (like the title). This icon will be shown on the Call-To-Action button.
+- CTA Link; String; A relative URL. If you want this link to go to `http://mysite.com/cool-links/1`, then the value of this key should be `/cool-links/1`.
+- Content; String; The content of a paragraph. You may add inline type HTML here, such as <br> or <em> tags.
+
+And you may include it in a template like this.
+
+```haml
+= haml "partials/tri_usp".to_sym, :layout => false, :locals => { :content => yourObjectHere }
+```
+
+Since nesta doesn't use a database, all content is stored in text files such as .mdown, .haml or other. Content is not supposed to live in views or in the controllers, but in these files located in `content/`. Sometimes this approach raises some questions, especially since Markdown is good at one thing, Haml is good at another and so on, that is why using filters is something I recommend in order to be able to write your content precicely in the way that feels most natural for you. I usually combine Haml and Markdown, it works for most cases where you may want to write content in Markdown but also throw in some markup in the mix which wouldn't look readable or wouldn't be possible with Markdown. This is how you may do that:
+
+```Haml
+%h1#such-a-nice-title
+  Hello filters
+
+%p.a-class.another-class{ :data-type => 'paragraph' }
+  Here comes a filter.
+
+:markdown
+  This text here will be enterpreted as markdown with _italics_ or [links](http://link.com) and such.
+```
+
+When it comes to using partials such as the Tri USP partial, Haml isn't quite sufficient for what we want to do either, yet we _do_ want to keep this data in this content file instead of in controllers/views, so we could throw in another filter and write some `erb`.
+
+```haml
+%h1#such-a-nice-title
+  Hello filters
+
+:markdown
+  This text here will be enterpreted as markdown with _italics_ or [links](http://link.com) and such.
+
+:erb
+  <% myObj = {
+    :key => value,
+    :key2 => value
+  } %>
+
+= haml "partials/tri_usp".to_sym, :layout => false, :locals => { :content => myObj }
+```
+
+That feels better than if we would define the `myObj` using Haml.
+
+## XP Graph
+
+`views/xp_graph`
+
+_Feature where you may present your knowledge/experience/passion about your subjects in a graph-ish way._
+
+The value of each label should be what each bar should represent.
+
+The value of data
+
+- id # arbitrary ID to connect bars to subjects
+- label # subject label (shown in bubble above the feature)
+- bars # integer value, one of the following: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 | representing the filled up part of bar
+- content # when switching subject, content will switch into this. String.
+
+```Ruby
+@xp_data = {
+  :labels => [
+    'Label 1',
+    'Label 2',
+    'Label 3'
+  ],
+  :data => [
+    { :id => 'some_id',  :label => 'A label', :bar_1 => 80, :bar_2 => 70, :bar_3 => 20, :content => 'Some text' }
+  ]
+}
+```
+
+## Related Links
+
+_Feature that renders a list of links_
+
+```Ruby
+@related_links = [
+  { :text => 'Some text', :href => 'http://example.com', :title => 'link title' }
+]
+```

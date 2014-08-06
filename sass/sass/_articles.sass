@@ -1,0 +1,28 @@
+// Articles
+article
+  ul
+    list-style: disc
+
+  ul li, ol li
+    margin-bottom: .1em
+
+ul, ol
+  &.articles-list
+    padding-left: 0
+    list-style: none
+
+  &.articles-summary-list
+
+    @include meta-info($size: 'small')
+
+    .article-content
+      padding-left: .7em
+
+    article
+      margin-bottom: 2em
+
+    h2
+      padding: .5em .7em
+      margin-bottom: .2em
+      background-color: lighten($base_font_color, 53)
+      @include border-radius(2px)

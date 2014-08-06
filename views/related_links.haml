@@ -1,0 +1,16 @@
+
+-#
+  Expected data format:
+  [{ :text => '', :href => '', :title => '' }]
+
+- if defined?(links) && !links.empty?
+  %section{ :class => 'related-links box full-section show-box' }
+
+    %h2
+      Related articles
+
+    %ul
+      - links.each do |link|
+        %li
+          %a{ :title => link[:title], :href => link[:href] }
+            = link[:text]

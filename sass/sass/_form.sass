@@ -1,0 +1,75 @@
+// Forms
+
+=field-style
+  +border-radius(.2em)
+  display: block
+  font-family: 'Arvo', arial, sans-serif
+  background-color: lighten($theme-color, 10)
+  border: 1px solid darken($theme-color, 10)
+  padding: .5em 5%
+  width: 90%
+
+form
+  margin-bottom: 2em
+
+  h1, h2, h3, h4, h5, h6
+    color: lighten($base_font_color, 30)
+
+  section
+    margin-bottom: 1em
+
+  &.no-labels
+    label
+      .placeholder &
+        display: none
+
+  // Labels above fields
+  &.l-1
+    label
+      display: block
+      margin-bottom: .5em
+
+    input
+      &[type=text],
+      &[type=password],
+      &[type=email],
+      &[type=tel],
+      &[type=url]
+        +field-style
+
+    textarea
+      +field-style
+
+    section.form-section-cta
+      border-top: 1px dashed darken($theme-color, 10)
+      padding-top: 1em
+
+    .form-cta
+      +button-style($width: 100%)
+
+// Contact form
+
+.contact-form-outer
+  display: none
+  position: absolute
+  bottom: 0
+  width: 100%
+
+  @media #{$more-than-menu-width}
+    display: block
+
+.contact-form
+  // Honeypot, should be submitted with default value
+  .website
+    display: none
+
+  #sidebar &
+    padding: 0 5%
+    font-size: initial
+
+    textarea
+      height: 4em
+
+    section.form-section-cta
+      border-top: none
+      padding-top: 0

@@ -1,0 +1,51 @@
+
+- if has_mailer?
+  %section.contact-form-outer
+
+    %form.contact-form.l-1.no-labels{ :action => '/contact', :method => 'post' }
+
+      %h3
+        Contact me
+
+      %section.feedback-container
+        - if locals[:errors] && !locals[:errors].empty?
+          %ul.negative-text
+            - locals[:errors].each do |e|
+              %li{ :class => "for-field-#{e[:field]}" }
+                = e[:message]
+        - elsif locals[:success_message]
+          %p.positive-text
+            = locals[:success_message]
+
+      %section
+        %div.form-section-content
+          %label{ :for => 'name' }
+            Your name
+        %div.form-section-content
+          %input{ :id => 'name', :type => 'text', :name => 'name', :placeholder => 'Your name', :value => locals[:name] }
+
+      %section.website
+        %div.form-section-content
+          %label{ :for => 'website' }
+            Your website
+        %div.form-section-content
+          %input{ :id => 'website', :type => 'text', :name => 'website', :placeholder => 'Your website', :value => 'http://yourwebsite.com' }
+
+      %section
+        %div.form-section-content
+          %label{ :for => 'reply-to' }
+            Your e-mail
+        %div.form-section-content
+          %input{ :id => 'reply-to', :type => 'text', :name => 'reply_to', :placeholder => 'Your e-mail', :value => locals[:reply_to] }
+
+      %section
+        %div.form-section-content
+          %label{ :for => 'message' }
+            Write your message
+        %div.form-section-content
+          %textarea{ :id => 'message', :name => 'message', :placeholder => 'Your message..', :value => locals[:message] }
+
+      %section.form-section-cta
+        %button{ :class => 'form-cta', :type => 'submit' }
+          Send
+          %i.fa.fa-paper-plane

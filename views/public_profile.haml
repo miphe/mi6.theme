@@ -1,0 +1,17 @@
+
+- classes = []
+- classes << 'bare' if defined?(bare) && bare
+- classes << 'is-inline' if defined?(inline) && inline
+
+- if defined? title && (social_info && social_info["profiles"])
+  %h2
+    Public profile, skills etc.
+
+  %ul{ :class => classes.join(' ') }
+    - social_info["profiles"].each do |item|
+      - info = item[1]
+      - label = item[0]
+      %li
+        %i{ :class => "fa #{info["icon"]}"}
+        %a{ :target => '_blank', :href => info["url"], :title => "#{social_info['name']} on #{label}", :rel => info["rel"] }
+          = label

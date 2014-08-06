@@ -1,0 +1,221 @@
+
+// Mixins
+=button-style($width : auto)
+  +border-radius(.2em)
+  background-color: darken($theme-color, 3)
+  color: contrast-color(lighten($accent_color, 20), #000, #fff, 70%)
+  border: 3px solid lighten($theme-color, 70)
+  width: $width
+  padding: .8em
+  font-size: 1.4em
+  font-weight: bold
+  color: darken($theme-color, 30)
+
+  &:hover
+    border-color: darken($theme-color, 30)
+    color: darken($theme-color, 50)
+
+// Placeholders
+%message-text
+  +border-radius(.2em)
+  padding: .8em 1em
+
+  li
+    list-style: none
+    margin-left: 1em
+    margin-bottom: .3em
+    padding-left: .2em
+
+    &:before
+      font-family: FontAwesome
+      display: inline-block
+      margin-left: -1em
+      width: 1.2em
+
+    &:last-child
+      margin-bottom: 0
+
+// General
+.page
+  color: $base_font_color
+
+pre
+  padding: 1.5em
+  border: 1px solid darken($theme-color, 8)
+
+// Typography
+p, li, dd, dt
+  line-height: 1.7em
+
+hr
+  border: 1px solid #ddd
+  margin: 2em 0
+
+ul, ol
+
+  ul, ol
+    margin-bottom: 0
+
+  &.bare
+    padding-left: 0
+
+    li
+      list-style: none
+
+h1
+  border-bottom: 1px dotted lighten($base_font_color, 45)
+
+h1, h2, h3, h4, h5, h6
+  color: $titles_font_color
+  font-weight: normal
+
+blockquote
+  padding-left: 1em
+  border-left: 8px solid $border_color
+
+a
+  text-decoration: none
+  color: $links_font_color
+  border-bottom: 1px solid transparent
+
+  &:hover
+    color: darken($links_font_color, 40)
+    border-bottom: 1px dashed lighten($links_font_color, 50)
+
+// End general typography
+
+// Content example
+// This class is great to use for adding images to articles
+// can be used with a div wrapper or an anchor if you want.
+//
+//   Example haml:
+//   .content-example.is-small
+//     %img{ :src => '/attachments/exmple.png' }
+.content-example
+  float: right
+  padding: .8em
+  max-width: 100%
+  background-color: lighten($theme-color, 2)
+  border: 1px solid darken($theme-color, 8)
+  margin: 0 0 1em 0
+
+  img
+    max-width: 100%
+
+  &.is-small
+    max-width: 20%
+
+  @media #{$more-than-phone}
+    width: 50%
+    margin: 0 1em 1em 1em
+
+  @media #{$more-than-tablet}
+    width: 30%
+
+a.content-example
+  &:hover
+    border: 1px dashed lighten($links_font_color, 50)
+
+// End content example
+
+// Lists
+ul.checks
+  li
+    list-style: none
+    margin-bottom: .3em
+    padding-left: .2em
+
+    &:before
+      content: '\f00c'
+      font-family: FontAwesome
+      display: inline-block
+      margin-left: -1em
+      width: 1.2em
+
+ul.code
+  li
+    list-style: none
+    margin-bottom: .3em
+    padding-left: .2em
+
+    &:before
+      content: '\f121'
+      font-family: FontAwesome
+      display: inline-block
+      margin-left: -1em
+      width: 1.2em
+
+.is-inline
+  li
+    display: inline
+    margin-right: 1em
+
+    &.is-last
+      margin-right: 0!important
+
+// End lists
+
+// Typography help classes to format your content
+.subtle-text
+  font-style: italic
+  color: lighten($base_font_color, 20)
+
+.marked-text
+  +border-radius(.2em)
+  padding: .2em .8em
+  background-color: darken($accent_color, 30)
+  color: contrast-color(darken($accent_color, 30), #000, #fff, 70%)
+
+.key
+  +border-radius(.2em)
+  padding: .3em .5em
+  background-color: darken($theme-color, 30)
+  color: contrast-color(darken($theme-color, 30), #000, #fff, 70%)
+
+.is-error
+  @extend .marked-text
+  background-color: lighten(red, 30)
+  color: contrast-color(lighten(red, 30), #000, #fff, 70%)
+
+.footnote
+  @extend .subtle-text
+  font-size: .9em
+
+// End help classes
+
+// Feedback messages
+// Error, Success, Info messages
+.negative-text
+  @extend %message-text
+  background-color: #ffeaea
+  color: #4f0000
+
+  li
+    color: #4f0000
+
+    &:before
+      content: '\f071'
+
+.positive-text
+  @extend %message-text
+  background-color: #c0eec5
+  color: darken(#c0eec5, 50)
+
+  li
+    color: darken(#c0eec5, 50)
+
+    &:before
+      content: '\f087'
+
+.neutral-text
+  @extend %message-text
+  background-color: #ffffcc
+  color: darken(#ffffcc, 60)
+
+  li
+    color: darken(#ffffcc, 60)
+
+    &:before
+      content: '\f06e'
+
+// End feedback messages

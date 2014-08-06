@@ -1,0 +1,56 @@
+
+.tpl-front
+
+  #content
+    float: none
+    display: block
+    width: auto
+
+  #content-inner
+    padding: 0 0 4em 0
+
+  #site-header
+    border-color: darken($theme-color, 70)
+
+  .content-inner
+    > section
+      padding: 4em 1em
+      border-bottom: 1px solid darken($theme-color, 8)
+      background:
+        // image: url(/attachments/cimg/shade20.png)
+        repeat: repeat-x
+        position: left -8px
+
+      @media #{$more-than-desktop}
+        padding: 4em 5%
+
+      &:nth-child(2)
+        background-position: left -3px
+
+      &:nth-child(even)
+        background-color: #fff
+
+      &:nth-child(odd)
+        background-color: #fafafa
+
+    @media #{$more-than-tablet}
+      padding: 3em 10%
+
+  @media #{$more-than-tablet}
+    #site-header h1,
+    .primary-nav a
+      line-height: $header-line-height * 2
+
+    .primary-nav
+      .is-active a
+        line-height: ($header-line-height * 2) - .4em
+
+  .about-me
+
+    @media #{$more-than-desktop}
+      padding:
+        right: 15%!important
+        left: 15%!important
+
+    > .box
+      margin-bottom: 0

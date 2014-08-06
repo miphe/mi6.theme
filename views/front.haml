@@ -1,0 +1,4 @@
+#content{ :class => 'front-page'}
+  #content-inner.content-inner
+    ~ @page.to_html(self)
+    = haml :main_footer

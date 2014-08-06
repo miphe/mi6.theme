@@ -1,0 +1,63 @@
+$tri-usp-height : 200px
+
+.tri-usp
+  @include container
+
+  > ul
+    @extend .bare
+    margin-bottom: 0
+
+    @media #{$more-than-tablet}
+      // padding: 0 5%
+
+  li
+    @include span-columns(12 omega, 12)
+    @extend .box
+    // background-color: orange
+    text-align: center
+    position: relative
+    height: $tri-usp-height
+
+    @media #{$more-than-tablet}
+      @include span-columns(4, 12)
+      margin-bottom: 0
+
+    &:hover
+      > span
+        color: darken($accent-color, 5)
+
+    &:last-child
+      @include span-columns(12 omega, 12)
+      margin-bottom: 0
+
+      @media #{$more-than-tablet}
+        @include span-columns(4 omega, 12)
+
+    > span
+      +transition(color, .5s)
+      position: absolute
+      color: lighten($accent-color, 20)
+      font-size: $tri-usp-height
+      line-height: $tri-usp-height
+      top: 0
+
+      &:first-child
+        left: 0
+
+      &:not(:first-child)
+        right: 0
+
+    h2
+      text-align: center
+      margin-bottom: .7em
+
+  .tri-usp-content
+    margin: 0 20%
+
+  .cta
+    text-align: center
+
+    a
+      &:hover
+        border-color: transparent
+        color: white

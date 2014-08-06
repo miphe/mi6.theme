@@ -1,0 +1,9 @@
+%footer.main-footer
+  %nav
+    %ul.is-inline
+      - Nesta::Menu.for_path('/').each_with_index do |item, index|
+        - if ! item.is_a?(Array)
+          - next if item.flagged_as?('primary')
+          %li{ :class => on_section(item.abspath) }
+            %a{ :href => item.abspath }
+              = item.link_text

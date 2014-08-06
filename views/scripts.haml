@@ -1,0 +1,9 @@
+
+- @scripts[:libs].each do |lib|
+  %script{ :type => 'text/javascript', :src => lib }
+
+- @scripts[:plugins].each do |plugin|
+  %script{ :type => 'text/javascript', :src => plugin }
+
+- @scripts[:apps].each do |app|
+  %script{ :type => 'text/javascript', :src => app }

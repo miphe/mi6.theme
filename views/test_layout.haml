@@ -1,0 +1,49 @@
+!!!
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js{ :lang => 'en' }
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title= @title
+    %meta{:content => "width=device-width", :name => "viewport"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Arvo:400,700", :rel => "stylesheet"}
+    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => "/mi6/css/js-test-suite.css" }
+
+    - jasmine_path = '/mi6/jasmine/'
+
+    %link{ :rel => 'shortcut icon', :type => 'image/png', :href => "#{jasmine_path}lib/jasmine-2.0.0/jasmine_favicon.png" }
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => "#{jasmine_path}lib/jasmine-2.0.0/jasmine.css" }
+
+    - ['jasmine.js', 'jasmine-html.js', 'boot.js'].each do |script|
+      %script{ :type => 'text/javascript', :src => "#{jasmine_path}lib/jasmine-2.0.0/#{script}" }
+
+    %script{ :type => 'text/javascript', :src => '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js' }
+    %script{ :type => 'text/javascript', :src => "#{jasmine_path}helpers/jasmine-jquery.js" }
+
+    / Source files
+    %script{ :type => 'text/javascript', :src => "/mi6/js/main.js" }
+
+    / Spec files
+    %script{ :type => 'text/javascript', :src => "#{jasmine_path}spec/ContactFormSpec.js" }
+    %script{ :type => 'text/javascript', :src => "#{jasmine_path}spec/XPGraphSpec.js" }
+
+    - local_stylesheet_link_tag('local')
+
+    - if @google_analytics_code
+      :javascript
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '#{@google_analytics_code}', 'miphe.com');
+        ga('send', 'pageview');
+
+  %body
+    %header.js-test-suite
+      = yield

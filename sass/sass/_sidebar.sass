@@ -1,0 +1,92 @@
+// Sidebar (fixed)
+$sb-bg-color        : lighten($theme-color, 1)
+$sb-hover           : lighten($theme-color, 5)
+$sb-font-color      : darken($theme-color, 15)
+$sb-hover-font-color: darken($theme-color, 40)
+
+#sidebar
+  position: fixed
+  bottom: 0
+  height: 3em
+  background-color: $sb-bg-color
+  border-top: 1px solid darken($theme-color, 8)
+
+  @media #{$more-than-menu-width}
+    top: 0
+    right: 0
+    height: 100%
+    background-color: $sb-bg-color
+    border-top: none
+    border-left: 1px solid darken($theme-color, 8)
+
+  &:hover
+    .content-container
+      opacity: 1!important
+
+  // Profile
+  section.profile
+    position: relative
+    text-align: left
+    height: 100%
+
+    // Place above media queries due to importance
+    img
+      position: relative
+      z-index: 1
+      height: 3em
+      width: auto
+
+    .content-container
+      +transition(opacity .25s ease-in-out)
+      opacity: .4
+
+    @media #{$more-than-menu-width}
+      // Profile
+      // Image above links
+      top: 35%
+      height: auto
+      text-align: center
+
+      img
+        +border-radius(50%)
+        height: auto
+        width: 50%
+        border: .2em solid #fff
+
+      .content-container ul
+        font-size: 2em
+
+      li
+        margin-right: .5em
+
+      h2
+        font-size: .8em
+        margin-bottom: .1em
+
+    @media #{$more-than-desktop}
+      // Profile
+      // Image to left, links to right,
+      // +container
+      text-align: left
+
+      h2
+        margin-top: 25%
+
+      img
+        width: 100%
+
+      .image-container
+        +span-columns(5, 12)
+
+      .content-container
+        +span-columns(7 omega, 12)
+
+      .image-container-inner
+        padding-left: 2em
+
+      .content-container-inner
+        padding: 0 1em
+
+    @media all and (max-height: 760px)
+      // If too short, render profile just beneath header
+      top: 60px

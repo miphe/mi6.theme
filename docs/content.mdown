@@ -1,0 +1,14 @@
+# Write new content
+
+## New categories
+
+- Add new {new_category}.haml file in content/pages/categories
+- Add Template and link text
+- Add the new category to the menu.txt
+
+## New showcase items
+
+- Add new {showcase_item_title}.mdown file in content/pages/showcase/
+- Add all required meta data
+-- Description, Link text and thumbnail is required
+- Add all content

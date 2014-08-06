@@ -1,0 +1,20 @@
+
+- if defined? content
+  %section.tri-usp
+    %ul
+      - content.each do |item|
+        %li
+          %span
+            {
+          %span
+            }
+          .tri-usp-content
+            %h2
+              %i{ :class => "fa #{item[:title_icon]}" }
+              =item[:title_text]
+            %p
+              =item[:content]
+            %p.cta
+              %a{ :href => item[:cta_link], :class => 'marked-text' }
+                =item[:cta_text]
+                %i{ :class => "fa fa-#{item[:cta_icon]}" }

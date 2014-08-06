@@ -1,0 +1,17 @@
+%section.meta-info
+  %ul
+    %li
+      %i.fa.fa-user
+      = page.metadata('Author') || author_info["name"]
+    %li
+      %i.fa.fa-clock-o
+      = page.metadata('Date')
+    - if (!page.categories.empty?)
+      %li
+        %i.fa.fa-tags
+        - page.categories.each do |category|
+          - if category != page.categories[-1]
+            = succeed ',' do
+              %a(href="#{category.abspath}")= category.link_text
+          - else
+            %a(href="#{category.abspath}")= category.link_text
