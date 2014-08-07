@@ -1,14 +1,14 @@
 #content
   #content-inner
 
-     / - classes = @page.metadata('show meta') === 'false' ? '' : 'has-meta'
+    - classes = @page.metadata('show meta') === 'false' ? '' : 'has-meta'
 
-    / %article(role="main"){ :class => classes }
-    /   ~ @page.to_html(self)
+    %article(role="main"){ :class => classes }
+      ~ @page.to_html(self)
 
-    /   - unless @page.metadata('show meta') === 'false'
-    /     = haml :page_meta, :layout => false, :locals => { :page => @page }
+      - unless @page.metadata('show meta') === 'false'
+        = haml :page_meta, :layout => false, :locals => { :page => @page }
 
-    / = haml :comments, :layout => false
+    = haml :comments, :layout => false
 
 = haml :sidebar, :layout => false
