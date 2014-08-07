@@ -144,13 +144,13 @@ module Nesta
       @scripts = {
         :libs => [
           '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-          '/mi6/js/modernizr.custom.js'
+          '/mi6.theme/js/modernizr.custom.js'
         ],
         :plugins => [
-          '/mi6/js/jquery.magnific-popup-0.9.9-min.js'
+          '/mi6.theme/js/jquery.magnific-popup-0.9.9-min.js'
         ],
         :apps => [
-          '/mi6/js/main.js'
+          '/mi6.theme/js/main.js'
         ]
       }
 
