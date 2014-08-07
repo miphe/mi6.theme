@@ -1,0 +1,23 @@
+
+.xp-graph.box
+  %ul
+    - xp_data[:data].each_with_index do |subject, i|
+      %li{ "data-subject" => subject.to_json, :class => 'subject-' + subject[:id] }
+        - klass = i < 1 ? 'is-active' : ''
+        %a{ :href => '#', :class => klass }
+          = subject[:label]
+
+  .label-col
+    - xp_data[:labels].each do |bar_label|
+      %span
+        = bar_label
+
+  .bars-col
+    - (1..3).each do |bar_nr|
+      %span{ :class => "bar-#{bar_nr}" }
+
+  %hr
+
+  .subject-content
+    %p
+      Placeholder (will be replaced by js)

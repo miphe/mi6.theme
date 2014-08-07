@@ -46,7 +46,7 @@ The object strubture that this partial expects looks like this:
 And you may include it in a template like this.
 
 ```haml
-= haml "partials/tri_usp".to_sym, :layout => false, :locals => { :content => yourObjectHere }
+= haml :"partials/tri_usp", :layout => false, :locals => { :content => yourObjectHere }
 ```
 
 Since nesta doesn't use a database, all content is stored in text files such as .mdown, .haml or other. Content is not supposed to live in views or in the controllers, but in these files located in `content/`. Sometimes this approach raises some questions, especially since Markdown is good at one thing, Haml is good at another and so on, that is why using filters is something I recommend in order to be able to write your content precicely in the way that feels most natural for you. I usually combine Haml and Markdown, it works for most cases where you may want to write content in Markdown but also throw in some markup in the mix which wouldn't look readable or wouldn't be possible with Markdown. This is how you may do that:
@@ -77,7 +77,7 @@ When it comes to using partials such as the Tri USP partial, Haml isn't quite su
     :key2 => value
   } %>
 
-= haml "partials/tri_usp".to_sym, :layout => false, :locals => { :content => myObj }
+= haml :"partials/tri_usp", :layout => false, :locals => { :content => myObj }
 ```
 
 That feels better than if we would define the `myObj` using Haml.
