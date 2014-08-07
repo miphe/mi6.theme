@@ -2,7 +2,7 @@
 module Nesta
   class App
 
-    use Rack::Static, :urls => ["/mi6"], :root => "themes/mi6/public"
+    use Rack::Static, :urls => ["/mi6.theme"], :root => "themes/mi6.theme/public"
 
     configure do
       sass_options = Hash.new
