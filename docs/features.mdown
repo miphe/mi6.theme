@@ -8,7 +8,7 @@ _This partial allows you to render a list of three unique selling points (USP), 
 
 The object strubture that this partial expects looks like this:
 
-```Ruby
+```ruby
 [
   {
     :title_icon => '',
@@ -51,7 +51,7 @@ And you may include it in a template like this.
 
 Since nesta doesn't use a database, all content is stored in text files such as .mdown, .haml or other. Content is not supposed to live in views or in the controllers, but in these files located in `content/`. Sometimes this approach raises some questions, especially since Markdown is good at one thing, Haml is good at another and so on, that is why using filters is something I recommend in order to be able to write your content precicely in the way that feels most natural for you. I usually combine Haml and Markdown, it works for most cases where you may want to write content in Markdown but also throw in some markup in the mix which wouldn't look readable or wouldn't be possible with Markdown. This is how you may do that:
 
-```Haml
+```haml
 %h1#such-a-nice-title
   Hello filters
 
@@ -72,10 +72,12 @@ When it comes to using partials such as the Tri USP partial, Haml isn't quite su
   This text here will be enterpreted as markdown with _italics_ or [links](http://link.com) and such.
 
 :erb
-  <% myObj = {
-    :key => value,
-    :key2 => value
-  } %>
+  <%
+    myObj = {
+      :key => value,
+      :key2 => value
+    }
+  %>
 
 = haml :"partials/tri_usp", :layout => false, :locals => { :content => myObj }
 ```
@@ -97,7 +99,7 @@ The value of data
 - bars # integer value, one of the following: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 | representing the filled up part of bar
 - content # when switching subject, content will switch into this. String.
 
-```Ruby
+```ruby
 xp_data = {
   :labels => [
     'Label 1',
@@ -114,7 +116,7 @@ xp_data = {
 
 _Feature that renders a list of links_
 
-```Ruby
+```ruby
 related_links = [
   { :text => 'Some text', :href => 'http://example.com', :title => 'link title' }
 ]

@@ -8,35 +8,38 @@ _What different list types are available_
 
 ### Check List
 
-    :::haml
-    %ul.check
-      %li
-        Buy groceries
-      %li
-        Cook food
+```haml
+%ul.check
+  %li
+    Buy groceries
+  %li
+    Cook food
+```
 
 ### Code List
 
-    :::haml
-    %ul.code
-      %li
-        HTML is cool
-      %li
-        CSS is also cool
+```haml
+%ul.code
+  %li
+    HTML is cool
+  %li
+    CSS is also cool
+```
 
 ### Flag List
 
 _A list with a flag title_
 
-    :::haml
-    .flag-list
-      :markdown
-        ### <span>Main text</span> some less prominent text
+```haml
+.flag-list
+  :markdown
+    ### <span>Main text</span> some less prominent text
 
-      %ul.code
-        %li
-          %a{ :href => 'http://example.com', :target => '_blank' }
-            Some link text
+  %ul.code
+    %li
+      %a{ :href => 'http://example.com', :target => '_blank' }
+        Some link text
+```
 
 ### Image in article content
 
@@ -45,9 +48,10 @@ _Image appropriate for an article_
 - The class 'content-example' renders the style
 - The class 'viewable-image' attaches the javascript gallery (lightbox-ish) functionality
 
-    :::haml
-    %a{ :href => '/path/to/full-img.png', :class => 'content-example viewable-image' }
-      %img{ :alt => 'some alt', :src => '/path/to/small-img.png' }
+```haml
+%a{ :href => '/path/to/full-img.png', :class => 'content-example viewable-image' }
+  %img{ :alt => 'some alt', :src => '/path/to/small-img.png' }
+```
 
 ### Large image in article with overlay
 
@@ -59,9 +63,11 @@ _Full size image in article that may have overlay with title_
 - The 'img.box.full--size' element is the large full size image.
 - The 'h2' element is an optional lower label.
 
-    :::haml
-    .img-container
-      .img-container-inner.darken
-      %img.logo{ :src => '/attachments/img/x-team/x-team.logo.white.png' }
-      %img.box.full-size{ :src => '/attachments/img/x-team/LA_sunset.jpg' }
-      <h2>Learning to work remotely</h2>
+```haml
+.img-container
+  .img-container-inner.darken
+  %img.logo{ :src => '/attachments/img/x-team/x-team.logo.white.png' }
+  %img.box.full-size{ :src => '/attachments/img/x-team/LA_sunset.jpg' }
+  %h2
+    Learning to work remotely
+```
