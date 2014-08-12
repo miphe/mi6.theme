@@ -1,11 +1,5 @@
 # To Do
 
 - [resp] Handle hover/touch/click events for menus (enhance responsiveness)
-- [js]   Add go-to link functionality
 - [sass] Sort out all sass (partialize more)
-- [ft]   Improve Showcase gallery
-- [ft]   Add sublevel menues for primary nav
-- [bug]  Fix bug where article title's doesn't break row gracefully
-- [ft]   Add global footer
 - [ft]   Add author_biography to articles
-- [ft]   Handle 404
