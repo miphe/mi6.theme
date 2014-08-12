@@ -98,7 +98,7 @@ The value of data
 - content # when switching subject, content will switch into this. String.
 
 ```Ruby
-@xp_data = {
+xp_data = {
   :labels => [
     'Label 1',
     'Label 2',
@@ -115,7 +115,7 @@ The value of data
 _Feature that renders a list of links_
 
 ```Ruby
-@related_links = [
+related_links = [
   { :text => 'Some text', :href => 'http://example.com', :title => 'link title' }
 ]
 ```

@@ -160,14 +160,6 @@ module Nesta
       @articles_from_path = find_articles_by_path('articles')
     end
 
-    # Sets related links for:
-    # ../showcase/item1
-    # Related links example:
-    # @related_links << { :text => 'The pretty item 1', :href => '/showcase/item1' }
-    before %r{^\/?showcase\/(item1)$} do |brand|
-      @related_links = []
-    end
-
     # Sets up Jasmine test suite
     get '/js-tests' do
       haml :spec_runner, :layout => :test_layout
