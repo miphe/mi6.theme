@@ -3,9 +3,9 @@ MI6 Nesta theme
 
 ![Mi6 screenshot](public/mi6.theme/cimg/mi6.screenshot.png)
 
-MI6 is a theme for Nesta, a [Ruby CMS](http://nestacms.com).
+Mi6 is a theme for [Nesta, a Ruby CMS](http://nestacms.com) for developers and designers. A minimalistic and responsive theme developed for showcasing items and presenting various content, mostly for self-promotion (portfolio, skills, bio etc.).
 
-The theme was designed and built by André Drougge ([Miphe.com](http://miphe.com)).
+Nesta is not the traditional CMS. There's no database, you write all your content with markdown, textile, haml, erb or other - it's your choice. You don't login to a web interface to make updates, there's no admin area. You write all content in your favorite text editor. Read more about how Nesta works on [the Nesta website.](http://nestacms.com)
 
 ## Requriements
 
@@ -70,3 +70,8 @@ A complete guide on Nesta's menu system [can be found here](http://nestacms.com/
 Items from `content/menu.txt` will need a flag to show up in the primary (top) menu. The rest (items that doesn't have this flag) of the first level menu items, they will show in the footer menu. This feels like a strange behavior and will probably come to change very soon when a refactoring/rebuild of the menu management is done.
 
 The metadata flag you need to add to a content page is: `Flags: primary`.
+
+---
+
+- _The Mi6 theme was designed and built by [André Drougge](http://miphe.com)._
+- _Why "Mi6"?_ - short for miphe 6.0, the 6'th theme developed for the miphe.com domain.
