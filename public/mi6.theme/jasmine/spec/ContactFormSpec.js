@@ -1,6 +1,6 @@
 describe("ContactForm", function() {
 
-  jasmine.getFixtures().fixturesPath = '/mi6/jasmine/fixtures';
+  jasmine.getFixtures().fixturesPath = '/mi6.theme/jasmine/fixtures';
 
   beforeEach(function() {
     loadFixtures('ContactForm.html');

@@ -12,9 +12,9 @@
     %meta{:content => "width=device-width", :name => "viewport"}
     %link{:href => "http://fonts.googleapis.com/css?family=Arvo:400,700", :rel => "stylesheet"}
     %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}
-    %link{ :rel => 'stylesheet', :type => 'text/css', :href => "/mi6/css/js-test-suite.css" }
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => "/mi6.theme/css/js-test-suite.css" }
 
-    - jasmine_path = '/mi6/jasmine/'
+    - jasmine_path = '/mi6.theme/jasmine/'
 
     %link{ :rel => 'shortcut icon', :type => 'image/png', :href => "#{jasmine_path}lib/jasmine-2.0.0/jasmine_favicon.png" }
     %link{ :rel => 'stylesheet', :type => 'text/css', :href => "#{jasmine_path}lib/jasmine-2.0.0/jasmine.css" }
@@ -26,7 +26,7 @@
     %script{ :type => 'text/javascript', :src => "#{jasmine_path}helpers/jasmine-jquery.js" }
 
     / Source files
-    %script{ :type => 'text/javascript', :src => "/mi6/js/main.js" }
+    %script{ :type => 'text/javascript', :src => "/mi6.theme/js/main.js" }
 
     / Spec files
     %script{ :type => 'text/javascript', :src => "#{jasmine_path}spec/ContactFormSpec.js" }

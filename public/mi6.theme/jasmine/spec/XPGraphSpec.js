@@ -1,6 +1,6 @@
 describe("XPGraph", function() {
 
-  jasmine.getFixtures().fixturesPath = '/mi6/jasmine/fixtures';
+  jasmine.getFixtures().fixturesPath = '/mi6.theme/jasmine/fixtures';
 
   beforeEach(function() {
     loadFixtures('XPGraph.html');
