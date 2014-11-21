@@ -16,7 +16,10 @@
             %article
               %header
                 %h2
-                  %a(href="#{article.abspath}")= article.heading
+                  -# Use link text as link text, otherwise article heading
+                  - link_text = article.metadata 'link text'
+                  - text = link_text ? link_text : article.heading
+                  %a(href="#{article.abspath}")= text
               .article-content
                 = haml :page_meta, :layout => false, :locals => { :page => article }
                 = article.summary
