@@ -16,13 +16,17 @@ Nesta is not the traditional CMS. There's no database, you write all your conten
 
 To get some examples on how you may use this theme, please check out this repo [MI6 website](https://github.com/miphe/mi6). The content folder is all up to you, how to use it and what elements to add and where, even so it can be nice to have an example to browse through which you will find in the said link.
 
-First things I'd recommend for you:
+### First things first
 
 - `config/config.yml`, when you have added all your own details here the site will feel more like your own (careful not to commit any sensitive information publicly).
 - `content/pages/index.haml`, first page of your site.
 - `docs/*`, here you can find some information about how to use features.
 
 If you feel like something is missing, please let me know, there's still a lot of work to be done. Don't hesitate to contribute with a patch if you feel you've built something that could be useful for the theme.
+
+### Test suite
+
+This theme has a front-end js-test suite, running on Jasmine. You can find it on `http://localhost:9393/js-tests`. As more js-features are added this suite will expand as well. If you want to use the edge version of this theme, please make sure the suite passes.
 
 ### Setting up the front page
 
