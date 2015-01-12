@@ -9,6 +9,7 @@ $menu-height       : 2em
 $module-padding    : 1em
 
 // Colors
+$angular					 : #a6120d
 $backbone          : #0071b5
 $jasmine           : #8a4182
 $jquery            : #0769ad
@@ -64,7 +65,17 @@ $responsive        : #d35d13
       @media #{$between-630-and-1100}
         margin-right: .1em
 
-      // Individual colors for each subject
+      // Individual colors for each subject (add your own below)
+
+      &.subject-angular a
+        color: #fff
+        background-color: lighten(desaturate($angular, 40), 10)
+
+        &.is-active
+          background-color: $angular
+
+          &:after
+            border-top-color: $angular
 
       &.subject-backbone a
         color: #fff
