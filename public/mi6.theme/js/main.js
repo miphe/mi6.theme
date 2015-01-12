@@ -59,7 +59,7 @@
       $bar_1.addClass('filled-' + data.bar_1);
       $bar_2.addClass('filled-' + data.bar_2);
       $bar_3.addClass('filled-' + data.bar_3);
-      $cn.text(data.content).prepend($preContent);
+      $cn.html(data.content).prepend($preContent);
       $cn.wrapInner('<p></p>');
     }
 
