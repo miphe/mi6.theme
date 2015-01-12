@@ -4,10 +4,10 @@
 require "susy"
 
 http_path = "/"
-css_dir = "../public/mi6/css"
+css_dir = "../public/mi6.theme/css"
 sass_dir = "sass"
-images_dir = "../public/mi6/img"
-javascripts_dir = "../public/mi6/js"
+images_dir = "../public/mi6.theme/img"
+javascripts_dir = "../public/mi6.theme/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
