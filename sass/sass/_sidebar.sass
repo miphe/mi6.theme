@@ -36,6 +36,11 @@ $sb-hover-font-color: darken($theme-color, 40)
       height: 3em
       width: auto
 
+    a
+      &:hover
+        // Removes link hover effect from icons
+        border-bottom: none
+
     .content-container
       +transition(opacity .25s ease-in-out)
       opacity: .4
@@ -43,7 +48,7 @@ $sb-hover-font-color: darken($theme-color, 40)
     @media #{$more-than-menu-width}
       // Profile
       // Image above links
-      top: 35%
+      top: 20%
       height: auto
       text-align: center
 
@@ -63,7 +68,10 @@ $sb-hover-font-color: darken($theme-color, 40)
         font-size: .8em
         margin-bottom: .1em
 
-    @media #{$more-than-desktop}
+    @media #{$very-tall}
+      top: 35%
+
+    @media #{$more-than-desktop + $and-tall}
       // Profile
       // Image to left, links to right,
       // +container
@@ -87,6 +95,27 @@ $sb-hover-font-color: darken($theme-color, 40)
       .content-container-inner
         padding: 0 1em
 
-    @media all and (max-height: 760px)
+    @media #{$short-and-wide}
       // If too short, render profile just beneath header
-      top: 60px
+      top: 65px
+      text-align: left
+
+      .image-container
+        +span-columns(3, 12)
+
+      .content-container
+        +span-columns(9 omega, 12)
+
+      .content-container-inner
+        padding-left: 2em
+        padding-top: 1em
+
+      .image-container-inner
+        padding-left: 1em
+      img
+        width: 100%
+        border: .2em solid #fff
+
+    @media #{$short-and-thin}
+      .content-container-inner
+        padding-top: 0
