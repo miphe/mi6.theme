@@ -12,6 +12,10 @@ Nesta is not the traditional CMS. There's no database, you write all your conten
 - Bundler
 - Nesta ~0.10.0
 
+## Installation
+
+You can install Nesta as [instructed here](https://github.com/gma/nesta), installing a theme is covered in the documentation.
+
 ## Getting started
 
 To get some examples on how you may use this theme, please check out this repo [MI6 website](https://github.com/miphe/mi6). The content folder is all up to you, how to use it and what elements to add and where, even so it can be nice to have an example to browse through which you will find in the said link.
