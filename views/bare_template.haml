@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default
+  .container
+    %ul.nav.navbar-nav{ :role => 'menu' }
+      - Nesta::Menu.for_path('/').each_with_index do |item, index|
+        - if ! item.is_a?(Array)
+          - next unless item.flagged_as?('primary')
+          %li{ :class => on_section(item.abspath, 'active') }
+            %a{ :href => item.abspath }
+              = item.link_text
+
+    %ul.nav.navbar-nav.navbar-right{ :role => 'menu' }
+      %li{ :class => ['dropdown', on_section('/demos', 'active')] }
+        %a{ :href => '#', :class => 'dropdown-toggle', :'data-toggle' => 'dropdown', :role => 'button', :'aria-expanded' => 'false' }
+          Demos
+          %span.caret
+        %ul.dropdown-menu{ :role => 'menu' }
+          %li{ :class => on_section('/demos/pick-n-mix', 'active') }
+            %a{ :href => '/demos/pick-n-mix' }
+              Pick 'n Mix
+
+~ @page.to_html(self)

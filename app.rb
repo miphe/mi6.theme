@@ -36,11 +36,11 @@ module Nesta
         'todo, write this helper'
       end
 
-      def on_section(href)
+      def on_section(href, klass = 'is-active')
         if href.is_a?(Array)
-          href.any? { |link| /\A(\/){0,1}#{link}(\/|$){1}/.match(request.path_info) } ? 'is-active' : nil
+          href.any? { |link| /\A(\/){0,1}#{link}(\/|$){1}/.match(request.path_info) } ? klass : nil
         else
-          /\A(\/){0,1}#{href}(\/|$){1}/.match(request.path_info) ? 'is-active' : nil
+          /\A(\/){0,1}#{href}(\/|$){1}/.match(request.path_info) ? klass : nil
         end
       end
 
