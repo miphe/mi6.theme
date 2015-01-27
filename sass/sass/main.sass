@@ -172,11 +172,15 @@ article.has-meta
   position: relative
 
   > h1
-    margin-bottom: 3em
+    margin-bottom: 1em
 
   .meta-info
-    position: absolute
-    top: 4em
+    color: lighten($base_font_color, 30)
+    font:
+      style: italic
+
+    a
+      color: lighten($links_font_color, 30)
 
   +meta-info
 

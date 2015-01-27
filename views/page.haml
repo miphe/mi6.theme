@@ -4,10 +4,10 @@
     - classes = @page.metadata('show meta') === 'false' ? '' : 'has-meta'
 
     %article(role="main"){ :class => classes }
-      ~ @page.to_html(self)
-
       - unless @page.metadata('show meta') === 'false'
         = haml :page_meta, :layout => false, :locals => { :page => @page }
+
+      ~ @page.to_html(self)
 
     = haml :comments, :layout => false
 
