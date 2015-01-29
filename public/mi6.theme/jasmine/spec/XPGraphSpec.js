@@ -24,9 +24,20 @@ describe("XPGraph", function() {
     expect(xpg.nav.find('li:nth-child(3) a')).toHaveClass('is-active');
   });
 
-  // it("should gather data properly", function() {
-  //   expect(true).toBe(false);
-  // });
+  it("should gather data properly", function() {
+    var expectation = {
+      id: "jasmine",
+      label: "Jasmine",
+      bar_1: 30,
+      bar_2: 30,
+      bar_3: 80,
+      content: "I believe in Jasmine."
+    };
+
+    var $el = xpg.nav.find('li:nth-child(2)');
+    var response = xpg.gatherData($el);
+    expect(_.isEqual(expectation, response)).toEqual(true);
+  });
 
   it("should clear old graph data", function() {
     // Makes sure the content is not cleared at first
@@ -52,6 +63,6 @@ describe("XPGraph", function() {
   });
 
   // it("should apply new graph data", function() {
-  //   expect(true).toBe(false);
+
   // });
 });
