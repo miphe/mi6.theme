@@ -22,6 +22,7 @@
     - ['jasmine.js', 'jasmine-html.js', 'boot.js'].each do |script|
       %script{ :type => 'text/javascript', :src => "#{jasmine_path}lib/jasmine-2.0.0/#{script}" }
 
+    %script{ :type => 'text/javascript', :src => '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js' }
     %script{ :type => 'text/javascript', :src => '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js' }
     %script{ :type => 'text/javascript', :src => "#{jasmine_path}helpers/jasmine-jquery.js" }
 
