@@ -43,6 +43,14 @@ describe("XPGraph", function() {
     // TODO: Add test for a bar as well.
   });
 
+  it("Should broadcast subject-change event on navigation click", function() {
+    var $el = xpg.nav.find('li:nth-child(2) a');
+    var spyEvent = spyOnEvent(xpg.module, 'subject-change');
+    $el.click();
+    expect('subject-change').toHaveBeenTriggeredOn(xpg.module);
+    expect(spyEvent).toHaveBeenTriggered();
+  });
+
   // it("should apply new graph data", function() {
   //   expect(true).toBe(false);
   // });
