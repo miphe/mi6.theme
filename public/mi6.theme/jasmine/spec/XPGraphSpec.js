@@ -62,6 +62,7 @@ describe("XPGraph", function() {
     expect(spyEvent).toHaveBeenTriggered();
   });
 
+  // TODO: Write test.
   // it("should apply new graph data", function() {
 
   // });
