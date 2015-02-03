@@ -16,6 +16,8 @@
         settings.closeOnContentClick = false;
         settings.gallery.enabled = true;
         $objs.magnificPopup(settings);
+      } else {
+        $objs.magnificPopup(settings);
       }
     }
   }
