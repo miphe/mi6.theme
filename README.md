@@ -81,5 +81,4 @@ The metadata flag you need to add to a content page is: `Flags: primary`.
 
 ---
 
-- _The Mi6 theme was designed and built by [André Drougge](http://miphe.com)._
-- _Why "Mi6"?_ - short for miphe 6.0, the 6'th theme developed for the miphe.com domain.
+- _Why the name "Mi6"?_ - short for miphe 6.0, the 6'th theme developed for the miphe.com domain.
