@@ -14,7 +14,7 @@ Nesta is not the traditional CMS. There's no database, you write all your conten
 
 ## Installation
 
-You can install Nesta as [instructed here](https://github.com/gma/nesta), installing a theme is covered in the documentation.
+You can install Nesta as [instructed here](https://github.com/gma/nesta) or [here](http://nestacms.com), installing a theme is covered [here in the documentation](http://nestacms.com/docs/design/theme).
 
 ## Getting started
 
