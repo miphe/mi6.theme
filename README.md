@@ -22,7 +22,7 @@ To get some examples on how you may use this theme, please check out this repo [
 
 ### First things first
 
-- `config/config.yml`, when you have added all your own details here the site will feel more like your own (careful not to commit any sensitive information publicly).
+- `config/config.yml`, when you have added all your own details here the site will feel more like your own (careful not to commit any sensitive information publicly). For all widgets to work (like the contact form etc.) you need some extra information in the config file. There's an example of a working config file [here](/docs/config_example.yml).
 - `content/pages/index.haml`, first page of your site.
 - `docs/*`, here you can find some information about how to use features.
 
