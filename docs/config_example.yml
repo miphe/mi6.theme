@@ -1,0 +1,117 @@
+# Title and subheading for your site. Used on the home page and in page titles.
+#
+title: "Site title"
+subtitle: "Nesta theme MI6"
+
+# You should really specify your content's author when generating an
+# Atom feed. Specify at least one of name, uri or email, and Nesta will
+# include it in your feed. See the Atom spec for more info:
+#
+# http://www.atomenabled.org/developers/syndication/atom-format-spec.php#element.feed
+#
+
+author:
+  name: Your name
+  uri: http://example.com
+  email: personal@email.com
+
+# You can stick with the default look and feel, or use a theme. Themes are
+# easy to create or install, and live inside the themes directory. You
+# can also use scripts/theme to install them.
+#
+theme: mi6.theme
+
+# If you want to use the Disqus service (http://disqus.com) to display
+# comments on your site, register a Disqus account and then specify your
+# site's short name here. A comment form will automatically be added to
+# the bottom of your pages.
+#
+#disqus_short_name: your_username
+
+# cache
+#     Set it to true if you'd like Nesta to cache your pages in ./public.
+#     Useful if you're deploying Nesta with a proxy server such as Nginx,
+#     but not in the least bit helpful if your pages are dynamic, or you're
+#     deploying Nesta to Heroku.
+#
+cache: false
+
+# content
+#     The root directory where nesta will look for your article files.
+#     Should contain "pages" and "attachments" subdirectories that contain
+#     your actual content and the (optional) menu.txt file that links to your
+#     main category pages.
+#
+content: content
+
+# google_analytics_code
+#     Set this if you want Google Analytics to track traffic on your site.
+#     Probably best not to set a default value, but to set it in production.
+#
+#     The production settings are used if you're deploying to Heroku, so
+#     scroll down a bit to set it in production even if you're not deploying
+#     to your own server.
+#
+# google_analytics_code: "UA-???????-?"
+
+# Overriding "cache" and "content" in production is recommended if you're
+# deploying Nesta to your own server (but see the deployment documentation
+# on the Nesta site). Setting google_analytics_code in production is
+# recommended regardless of how you're deploying (if you have a GA account!).
+#
+# Don't forget to uncomment the "production:" line too...
+
+# production:
+#   cache: true
+#   content: /var/apps/nesta/shared/content
+#   google_analytics_code: "UA-???????-?"
+
+# Mailer
+#   Pony mailer settings
+#   Default set to gmail settings
+#   You will need to update at least:
+#   to, user_name, pw
+
+mailer:
+  subject: "Site contact form: "
+  to: "personal@email.com"
+  via: smtp
+  via_options:
+    address: smtp.gmail.com
+    port: 587
+    authentication: plain
+    enable_starttls_auto: true
+    pw: "very secure password"
+    user_name: "mailer"
+
+# Owner
+#   Information will be used in rendering icons
+#   and links to your public profiles.
+#   Uncomment and fill in the ones you intend to use.
+
+owner:
+  name: Your name
+  gravatar: http://www.gravatar.com/avatar/2cd76b3e1b56af4475c66f5ffb68641a.png?s=400
+  contact_me_text: Get in touch
+  profiles:
+    Twitter:
+      user: Twitter username
+      url: https://twitter.com/the_username
+      icon: fa-twitter-square
+    GitHub:
+      user: Github username
+      url: https://github.com/the_username
+      icon: fa-github
+    Careers:
+      user: Careers username
+      url: http://careers.stackoverflow.com/the_username
+      icon: fa-stack-overflow
+    LinkedIn:
+      user: Your name
+      url: link to linkenin
+      icon: fa-linkedin-square
+    GooglePlus:
+      user: Your name
+      url: https://plus.google.com/+YourName?rel=author
+      icon: fa-google-plus-square
+      rel: author
