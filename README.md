@@ -9,8 +9,9 @@ Nesta is not the traditional CMS. There's no database, you write all your conten
 
 ## Requriements
 
-- Bundler
+- Ruby 2.x, [I recommend RVM](https://rvm.io/)
 - Nesta ~0.10.0
+- Bundler
 
 ## Installation
 
