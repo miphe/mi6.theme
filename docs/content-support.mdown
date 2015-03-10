@@ -60,7 +60,7 @@ _Full size image in article that may have overlay with title_
 - The class 'img-container' should be applied to wrapper.
 - To have an overlay, add an element with class '.img-container-inner'. It will be bright, if you want it dark you need to add the class 'darken'.
 - The 'img.logo' element is a logo that will reside on top of the overlay.
-- The 'img.box.full--size' element is the large full size image.
+- The 'img.box.full-size' element is the large full size image.
 - The 'h2' element is an optional lower label.
 
 ```haml
