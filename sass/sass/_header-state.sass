@@ -1,0 +1,57 @@
+
+// Large
+%l-large
+  line-height: $header-line-height * 2
+
+%l-active-link-large
+  line-height: ($header-line-height * 2) - .4em
+
+%l-la
+  h1
+    @extend %l-large
+
+  .primary-nav
+    a
+      @extend %l-large
+
+    .is-active a
+      @extend %l-active-link-large
+
+// Small
+%l-small
+  line-height: $header-line-height
+
+%l-active-link-small
+  line-height: ($header-line-height) - .4em
+
+%l-sm
+  h1
+    @extend %l-small
+
+  .primary-nav
+    a
+      @extend %l-small
+
+    .is-active a
+      @extend %l-active-link-small
+
+// Rendering
+#site-header
+  &.l-always-large
+    @extend %l-la
+
+  &.l-always-small
+    @extend %l-sm
+
+  &.l-front-large
+    // Duplicated styles due to restriction
+    // May not @extend an outer selector from within @media
+    @media #{$more-than-tablet}
+      .tpl-front &
+        h1
+          line-height: $header-line-height * 2
+        .primary-nav
+          a
+            line-height: $header-line-height * 2
+          .is-active a
+            line-height: ($header-line-height * 2) - .4em

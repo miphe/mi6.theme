@@ -1,4 +1,4 @@
-%header#site-header(role="banner")
+%header#site-header{ :class => "l-#{layout[:header]}" }
   %h1
     %a{ :href => '/' }
       = @heading
@@ -8,7 +8,7 @@
   %nav.primary-nav
     %a.mobile-menu-icon
       %i{ :class => 'fa fa-bars' }
-    %ul
+    %ul{ :role => 'navigation' }
       - Nesta::Menu.for_path('/').each_with_index do |item, index|
         - if ! item.is_a?(Array)
           - next unless item.flagged_as?('primary')

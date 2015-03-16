@@ -32,6 +32,16 @@ module Nesta
         Nesta::Config.fetch('owner', nil) ? Nesta::Config.fetch('owner') : {}
       end
 
+      def layout
+        _header = if Nesta::Config.fetch('layout', nil)
+          Nesta::Config.fetch('layout')['header']
+        else
+          'front-large'
+        end
+
+        { :header => _header }
+      end
+
       def youtubeVideo(id, effectuation = 'full')
         'todo, write this helper'
       end

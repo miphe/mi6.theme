@@ -66,6 +66,15 @@ content: content
 #   content: /var/apps/nesta/shared/content
 #   google_analytics_code: "UA-???????-?"
 
+# Layout options
+#   "header" will force the page header to always remain in one state.
+#   Leave this commented out for standard behavior.
+#   Available options are:
+#     "always-large"
+#     "always-small"
+# layout:
+#   header: "always-small"
+
 # Mailer
 #   Pony mailer settings
 #   Default set to gmail settings
