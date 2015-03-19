@@ -1,0 +1,154 @@
+/*
+  Expecting data object of the following structure
+  [
+    {
+      :year => '2008',
+      :articles => [
+        { :heading => 'Some title | etc.',
+          :details => 'Details',
+          :extra => 'Location, Country | From year - To year',
+          :length => 8,
+          :stop => 2
+        }
+      ]
+    }
+  ]
+
+$padding-from-line: 3.5em
+$year-item-height: 4em
+$year-line-width: 3em
+$year-line-height: 1px
+$year-line-thickness: .5em
+$year-position: $year-line-width + $padding-from-line
+$general-color: #ddd
+
+// TODO: arrange breakpoints
+// Needs to be in px.
+$article-width: 450px
+
+// One color per year
+// First in list is most current year.
+$random-colors: #008080, #fc6c85, #8c92ac, #536878, #86608e, #6a5acd, #915f6d, #997a8d, #3eb489, #673147, #c9c0bb, #b76e79, #536872, #78866b, #8c92ac, #536878, #86608e, #20b2aa, #915f6d, #997a8d
+
+.timeline
+  margin: 5em 0
+
+.timeline-list
+  padding: 0 0 0 $padding-from-line
+  margin: 0
+  border-left: $year-line-thickness solid $general-color
+
+  h2
+    position: absolute
+    right: 105%
+    top: 0
+    margin-right: $year-position
+    font-size: 1.4em
+    line-height: 0
+    color: $general-color
+    +transition(color .5s)
+
+  li
+    position: relative
+    list-style: none
+    height: $year-item-height
+
+    // Before/After are used as measurement lines
+    // for 1 year and .5 year.
+    &:after, &:before
+      content: ''
+      position: absolute
+      display: block
+      height: $year-line-height
+      background-color: $general-color
+      right: 100%
+      margin-right: $padding-from-line * 2
+
+    &:before
+      top: 0
+      width: $year-line-width
+
+    &:after
+      top: $year-item-height / 2
+      width: $year-line-width / 2
+
+  // Sets colors to each flap representing an article.
+  // Assuming 20 years is enough, (One color per year)
+  // Also sets the year color if that year is active.
+  @for $i from 1 through 20
+    li:nth-child(#{$i})
+      &.is-active
+        h2
+          color: nth($random-colors, $i)
+      article
+        &:before
+          background-color: nth($random-colors, $i)
+
+  article
+    position: absolute
+
+    &:before
+      content: ''
+      position: absolute
+      left: - $padding-from-line
+      background-color: $general-color
+      width: $padding-from-line * .4
+      cursor: pointer
+      +transition(width .2s)
+      +opacity(.6)
+      +border-bottom-right-radius(4px)
+      +border-top-right-radius(4px)
+
+    &:hover:before
+      width: $padding-from-line * .6
+
+    // Bar height
+    @for $i from 1 through 20
+      &.shape-l-#{$i}:before
+        height: 1em * $i
+
+    // Bar (and article) starts at
+    @for $i from 0 through 4
+      &.shape-s-#{$i}
+        top: 1em * $i
+
+    &.is-faded
+      .article-inner
+        +opacity(0)
+
+    &.is-showing
+      &:before
+        width: $padding-from-line * .6
+        +opacity(1)
+
+      .article-inner
+        border-top: 3px solid $general-color
+        margin-top: .3em
+        padding-top: 1em
+        width: 100%
+
+    .article-sizer
+      width: $article-width
+
+  .article-inner
+    overflow: hidden
+    width: 0
+    +opacity(1)
+    +transition(width .5s .15s, opacity .15s)
+
+// Typography
+.timeline
+  article
+    h3
+      color: darken($general-color, 25)
+      line-height: 1.6em
+      margin-bottom: .5em
+    p
+      color: darken($general-color, 20)
+      line-height: 1.4em
+      margin-bottom: .5em
+
+    p.subtle-text
+      float: left
+      padding-top: .4em
+      border-top: 1px solid lighten($general-color, 5)

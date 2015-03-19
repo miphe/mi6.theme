@@ -20,7 +20,7 @@
         $objs.magnificPopup(settings);
       }
     }
-  }
+  };
 
   ExperienceGraph = function(selector) {
     this.init = function() {
@@ -87,7 +87,7 @@
     this.gatherData = function(listItem) {
       return $(listItem).data('subject');
     }
-  }
+  };
 
   FormHandler = function() {
 
@@ -168,7 +168,52 @@
         that.ajaxSubmission($(this).attr('action'), $(this).serialize());
       });
     }
-  }
+  };
+
+  /*
+    TODO:
+    - All years affected by an article should be highlighted
+    - Write tests for this Timeline
+  */
+  Timeline = function(selector) {
+    this.init = function() {
+      this.$timeLine = $(selector);
+      this.$articles = this.$timeLine.find('article');
+      this.applyListeners();
+      this.selectDefault();
+    };
+
+    this.selectDefault = function() {
+      this.$articles.first().trigger('click');
+    };
+
+    this.applyListeners = function() {
+      var that = this;
+
+      this.$articles.on('click', function() {
+        that.hideArticles();
+        that.showArticle($(this));
+        that.deActivateYears();
+        that.activateYear($(this).closest('li'));
+      });
+    };
+
+    this.showArticle = function($el) {
+      $el.removeClass('is-idle is-faded').addClass('is-showing');
+    };
+
+    this.hideArticles = function() {
+      this.$articles.addClass('is-idle is-faded').removeClass('is-showing');
+    };
+
+    this.activateYear = function($li) {
+      $li.addClass('is-active');
+    };
+
+    this.deActivateYears = function() {
+      this.$timeLine.find('.timeline-list > li').removeClass('is-active');
+    };
+  };
 
   var magnImageHandler = new Magnific('image', '.viewable-image');
   magnImageHandler.init();
@@ -178,5 +223,8 @@
 
   var contactForm = new FormHandler();
   contactForm.init('.contact-form');
+
+  var timeLine = new Timeline('.timeline');
+  timeLine.init();
 
 })(jQuery);

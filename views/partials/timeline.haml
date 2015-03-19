@@ -1,0 +1,21 @@
+
+.timeline.grid-container
+  .col-4
+    &nbsp;
+  .col-8
+    %ul.timeline-list
+      - timeline.each do |t|
+        %li
+          %h2
+            = t[:year]
+          - t[:articles].each do |a|
+            %article{ :class => "shape-l-#{a[:length]} shape-s-#{a[:stop]} is-idle" }
+              .article-inner
+                .article-sizer
+                  %h3
+                    = a[:heading]
+                  %div
+                    %p
+                      = a[:details]
+                    %p.subtle-text
+                      = a[:extra]
