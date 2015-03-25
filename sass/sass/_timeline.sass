@@ -41,7 +41,7 @@ $random-colors: #008080, #fc6c85, #8c92ac, #536878, #86608e, #6a5acd, #915f6d, #
   h2
     position: absolute
     left: -10em
-    top: 0
+    bottom: -.4em
     margin-right: $year-position
     font-size: 1.4em
     line-height: 0
@@ -52,6 +52,12 @@ $random-colors: #008080, #fc6c85, #8c92ac, #536878, #86608e, #6a5acd, #915f6d, #
     position: relative
     list-style: none
     height: $year-item-height
+
+    &:first-child
+      height: 0
+
+      &:after
+        display: none
 
     // Before/After are used as measurement lines
     // for 1 year and .5 year.
@@ -65,11 +71,11 @@ $random-colors: #008080, #fc6c85, #8c92ac, #536878, #86608e, #6a5acd, #915f6d, #
       margin-right: $padding-from-line * 2
 
     &:before
-      top: 0
+      bottom: 0
       width: $year-line-width
 
     &:after
-      top: $year-item-height / 2
+      bottom: $year-item-height / 2
       width: $year-line-width / 2
 
   // Sets colors to each flap representing an article.

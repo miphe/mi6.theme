@@ -121,3 +121,43 @@ related_links = [
   { :text => 'Some text', :href => 'http://example.com', :title => 'link title' }
 ]
 ```
+
+## Timeline
+
+_Renders a timeline appropriate for displaying your history (CV style)_
+
+The timeline is shown vertically, with years on the left and information about activities (articles) related to periods in that year.
+
+This feature takes an array of objects structured as seen here.
+
+```ruby
+timeline = [
+  {
+    :year => '2016',
+    :articles => []
+  },
+  {
+    :year => '2015',
+    :articles => [
+      { :heading => 'Some title | etc.',
+        :details => 'Details',
+        :extra => 'Location, Country | From year - To year',
+        :length => 8,
+        :stop => 2
+      }
+    ]
+  }
+]
+```
+
+You render the feature through a partial like so:
+
+```ruby
+= haml :"partials/timeline", :layout => false, :locals => { :timeline => timeline }
+```
+
+The first year should always be the _next_ year from the current, meaning that year hasn't started yet. If current year is 2015, then the first year of the timeline array should be 2016. This is to finish the timeline nicely with the next year, yet not render it as a regular year.
+
+A year may contain many events (articles). They may overlap, for instance if you started a new project in 2010 2/4 you may still work on your previous project until 2010 3/4, which is fine.
+
+The `:length` and `:stop` values decide how long the event lasted and where it ends, best is to fiddle around with it a bit and you will get the hand of it.
