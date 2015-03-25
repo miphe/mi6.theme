@@ -11,7 +11,7 @@ Nesta is not the traditional CMS. There's no database, you write all your conten
 
 - Git
 - Ruby 2.x, I recommend [RVM](https://rvm.io/)
-- Nesta ~0.10.0
+- Nesta ~0.11.0
 - Bundler
 
 ## Installation
@@ -97,6 +97,10 @@ A complete guide on Nesta's menu system [can be found here](http://nestacms.com/
 Items from `content/menu.txt` will need a flag to show up in the primary (top) menu. The rest (items that doesn't have this flag) of the first level menu items, they will show in the footer menu. This feels like a strange behavior and will probably come to change very soon when a refactoring/rebuild of the menu management is done.
 
 The metadata flag you need to add to a content page is: `Flags: primary`.
+
+### Favicon
+
+Simply put your favicon file in your content/attachment folder: `content/attachments/favicon.ico`.
 
 ---
 
