@@ -160,4 +160,4 @@ The first year should always be the _next_ year from the current, meaning that y
 
 A year may contain many events (articles). They may overlap, for instance if you started a new project in 2010 2/4 you may still work on your previous project until 2010 3/4, which is fine.
 
-The `:length` and `:stop` values decide how long the event lasted and where it ends, best is to fiddle around with it a bit and you will get the hand of it.
+The `:length` and `:stop` values decide how long the event lasted and where it ends, best is to fiddle around with it a bit and you will get the hang of it.
