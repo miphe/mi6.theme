@@ -27,11 +27,14 @@
     %script{ :type => 'text/javascript', :src => "#{jasmine_path}helpers/jasmine-jquery.js" }
 
     / Source files
+    %script{ :type => 'text/javascript', :src => "/mi6.theme/js/jquery.magnific-popup-0.9.9-min.js" }
     %script{ :type => 'text/javascript', :src => "/mi6.theme/js/main.js" }
+
 
     / Spec files
     %script{ :type => 'text/javascript', :src => "#{jasmine_path}spec/ContactFormSpec.js" }
     %script{ :type => 'text/javascript', :src => "#{jasmine_path}spec/XPGraphSpec.js" }
+    %script{ :type => 'text/javascript', :src => "#{jasmine_path}spec/TimelineSpec.js" }
 
     - local_stylesheet_link_tag('local')
 
