@@ -99,7 +99,7 @@ describe("Timeline", function() {
       expect($li).toHaveClass('is-active');
     });
 
-    it("should deactivate year (deActivateYears)", function() {
+    it("should deactivate years (deActivateYears)", function() {
       var $li = $(tl.$articles[4]).closest('li');
       var $allListItems = tl.$timeLine.find('.timeline-list > li');
 
