@@ -7,6 +7,9 @@
         %a{ :href => '#', :class => klass }
           = subject[:label]
 
+  .logo-content
+    / image
+
   .label-col
     - xp_data[:labels].each do |bar_label|
       %span
@@ -19,5 +22,4 @@
   %hr
 
   .subject-content
-    %p
-      Placeholder (will be replaced by js)
+    / Placeholder (will be replaced by js)

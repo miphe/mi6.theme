@@ -9,7 +9,8 @@ describe("XPGraph", function() {
   });
 
   it("should start with first category active, and no other", function() {
-    expect(xpg.nav.find('li:first a')).toHaveClass('is-active');
+    var firstLink = xpg.nav.find('li:first a');
+    expect(firstLink).toHaveClass('is-active', "but had: " + firstLink.attr('class'));
     var $all       = xpg.nav.find('li');
     var $notFirsts = $all.not('li:first');
     $.each($notFirsts, function($itm) {
@@ -28,6 +29,7 @@ describe("XPGraph", function() {
     var expectation = {
       id: "jasmine",
       label: "Jasmine",
+      img: "attachments/img/logos/responsive.png",
       bar_1: 30,
       bar_2: 30,
       bar_3: 80,
@@ -36,7 +38,7 @@ describe("XPGraph", function() {
 
     var $el = xpg.nav.find('li:nth-child(2)');
     var response = xpg.gatherData($el);
-    expect(_.isEqual(expectation, response)).toEqual(true);
+    expect(_.isEqual(expectation, response)).toEqual(true, 'data structure was incorrect.');
   });
 
   it("should clear old graph data", function() {

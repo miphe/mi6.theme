@@ -41,12 +41,14 @@
       var $bar_2 = this.module.find('.bar-2');
       var $bar_3 = this.module.find('.bar-3');
       var $cn = this.module.find('.subject-content');
+      var $lg = this.module.find('.logo-content');
 
       // Removing unecessary classes
       $bar_1.attr('class', 'bar-1');
       $bar_2.attr('class', 'bar-2');
       $bar_3.attr('class', 'bar-3');
       $cn.empty();
+      $lg.empty();
     }
 
     this.applyNewGraphData = function(element) {
@@ -55,6 +57,8 @@
       var $bar_2 = this.module.find('.bar-2');
       var $bar_3 = this.module.find('.bar-3');
       var $cn = this.module.find('.subject-content');
+      var $lg = this.module.find('.logo-content');
+      var lcHeight = this.module.find('.label-col').height();
 
       var $preContent = $('<em>' + data.label + ' ::</em>')
 
@@ -63,6 +67,10 @@
       $bar_3.addClass('filled-' + data.bar_3);
       $cn.html(data.content).prepend($preContent);
       $cn.wrapInner('<p></p>');
+
+      var $img = $('<img src="' + data.img + '" alt="Logo ' + data.label + '" />');
+      $img.css('max-height', lcHeight);
+      $lg.append($img);
     }
 
     this.applySubjectListener = function() {

@@ -9,7 +9,7 @@ $menu-height       : 2em
 $module-padding    : 1em
 
 // Colors
-$angular					 : #a6120d
+$angular           : #a6120d
 $backbone          : #0071b5
 $jasmine           : #8a4182
 $jquery            : #0769ad
@@ -188,6 +188,7 @@ $responsive        : #d35d13
     @media #{$more-than-phone}
 
     @media #{$more-than-tablet}
+      +span-columns(3, 12)
 
     span
       display: block
@@ -195,12 +196,25 @@ $responsive        : #d35d13
       padding-right: 20%
       line-height: 2em
 
+  .logo-content
+    display: none
+    width: 0
+    min-height: 1px
+
+    @media #{$more-than-tablet}
+      +span-columns(3, 12)
+
+    img
+      float: right
+      max-width: 100%
+
   .bars-col
     +span-columns(8 omega, 12)
 
     @media #{$more-than-phone}
 
     @media #{$more-than-tablet}
+      +span-columns(6 omega, 12)
 
     span
       +transition(width, .5s)

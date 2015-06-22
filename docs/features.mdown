@@ -95,6 +95,7 @@ The value of each label should be what each bar should represent.
 The value of data
 
 - id # arbitrary ID to connect bars to subjects
+- img # URL to appropriate image of subject
 - label # subject label (shown in bubble above the feature)
 - bars # integer value, one of the following: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 | representing the filled up part of bar
 - content # when switching subject, content will switch into this. String.
@@ -107,7 +108,15 @@ xp_data = {
     'Label 3'
   ],
   :data => [
-    { :id => 'some_id',  :label => 'A label', :bar_1 => 80, :bar_2 => 70, :bar_3 => 20, :content => 'Some text' }
+    {
+      :id => 'some_id',
+      :img => 'attachments/img/example.png',
+      :label => 'A label',
+      :bar_1 => 80,
+      :bar_2 => 70,
+      :bar_3 => 20,
+      :content => 'Some text'
+    }
   ]
 }
 ```
