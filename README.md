@@ -104,7 +104,7 @@ Simply put your favicon file in your content/attachment folder: `content/attachm
 
 ### Mailer
 
-For the contact form to work, you need some kind of mailer. The one implemented is Pony, you can set it up easily if you have for instance a Goole e-mail account (gmail).
+For the contact form to work, you need some kind of mailer. The one implemented is Pony, you can set it up easily if you have for instance a Google e-mail account (gmail).
 
 _Google has changed their security recently, in order to let Pony use your e-mail account, you need to enable that in your Google account security settings. This setting is called "Allowing less secure apps to access your account". This is less than optimal, there is an issue here that aims to fix that._
 
