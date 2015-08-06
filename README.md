@@ -102,6 +102,14 @@ The metadata flag you need to add to a content page is: `Flags: primary`.
 
 Simply put your favicon file in your content/attachment folder: `content/attachments/favicon.ico`.
 
+### Mailer
+
+For the contact form to work, you need some kind of mailer. The one implemented is Pony, you can set it up easily if you have for instance a Goole e-mail account (gmail).
+
+_Google has changed their security recently, in order to let Pony use your e-mail account, you need to enable that in your Google account security settings. This setting is called "Allowing less secure apps to access your account". This is less than optimal, there is an issue here that aims to fix that._
+
+_I recommend you to have a dedicated, detached e-mail account to use for your Pony mailer, instead of your main mail account._
+
 ---
 
 - _Why the name "Mi6"?_ - short for miphe 6.0, the 6'th theme developed for the miphe.com domain.
