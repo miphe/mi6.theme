@@ -17,6 +17,7 @@ $sass              : #c6538c
 $compass           : #e71708
 $less              : #1d365d
 $responsive        : #d35d13
+$vue               : #42b983
 
 .xp-graph
   +container
@@ -146,6 +147,16 @@ $responsive        : #d35d13
 
           &:after
             border-top-color: $responsive
+
+      &.subject-vue a
+        color: #fff
+        background-color: lighten(desaturate($vue, 20), 20)
+
+        &.is-active
+          background-color: $vue
+
+          &:after
+            border-top-color: $vue
 
     a
       +border-radius($bar-height/4)
